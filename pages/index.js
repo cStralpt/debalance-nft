@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { RoadmapTimeLine } from "../Components/RoadMapTimeLine";
 import styles from "../styles/Home.module.css";
 
 export const getServerSideProps = async (ctx) => {
@@ -10,6 +11,7 @@ export const getServerSideProps = async (ctx) => {
 };
 export default function Home() {
   const navMenu = ["Home", "Story", "NFT", "Roadmap", "About us"];
+
   return (
     <div className="flex h-screen flex-col border-4_ border-red-300 ">
       <Head>
@@ -32,21 +34,27 @@ export default function Home() {
             >
               <div className="home-content-container max-w-[1500px] flex">
                 <section className="basis-1/2 grow pl-4">
-                  <h1 className="text-6xl text-[#EB6440] font-[PBCaps]">DeBalance NFT</h1>
+                  <h1 className="text-6xl text-[#EB6440] font-[PBCaps]">
+                    DeBalance NFT
+                  </h1>
                   <p className="text-lg text-[#497174] font-[VarelaR]">
                     DeBalance NFT adalah koleksi NFT serial yang berjalan diatas
                     jaringan blockchain Algorand. Proyek merupakan bagian dari
                     mega proyek MANDALIKA SERIES, sebuah proyek yang di inisiasi
                     oleh komunitas KawanCrypto, Lombok Blockchain Society,
                     Kawanduit, Enjoy Life Foundation dan Komunitas Pendidikan di
-                    Lombok. Dalam proyek ini kami merilis 7500 karakter yang
-                    dirilis sesuai volume berseri yang diwakili oleh karakter
-                    yang berbeda beda. Setiap karakter diwakili oleh corak,
-                    warna, desain dan tema yang berbeda sehingga masing masing
-                    memiliki keunikan yang identic dengan kebudayan dan nilai
-                    nilai yang berkembang di Lombok. Untuk menambah unsur FUN
-                    pada proyek ini kami menyelipkan beberapa karakter yang
-                    benar benar terbatas (limited edition).{" "}
+                    Lombok.
+                  </p>
+                  <br />
+                  <p>
+                    Dalam proyek ini kami merilis 7500 karakter yang dirilis
+                    sesuai volume berseri yang diwakili oleh karakter yang
+                    berbeda beda. Setiap karakter diwakili oleh corak, warna,
+                    desain dan tema yang berbeda sehingga masing masing memiliki
+                    keunikan yang identic dengan kebudayan dan nilai nilai yang
+                    berkembang di Lombok. Untuk menambah unsur FUN pada proyek
+                    ini kami menyelipkan beberapa karakter yang benar benar
+                    terbatas (limited edition).
                   </p>
                 </section>
                 <section className="relative basis-1/3 z-[-1]">
@@ -54,8 +62,8 @@ export default function Home() {
                     <Image
                       src="/Images/NFTs/93.png"
                       alt="Picture of the author"
-                      width={1000} 
-                      height={1000} 
+                      width={1000}
+                      height={1000}
                       // blurDataURL="data:..." automatically provided
                       // placeholder="blur" // Optional blur-up while loading
                     />
@@ -64,8 +72,8 @@ export default function Home() {
                     <Image
                       src="/Images/NFTs/442.png"
                       alt="Picture of the author"
-                      width={1000} 
-                      height={1000} 
+                      width={1000}
+                      height={1000}
                       // blurDataURL="data:..." automatically provided
                       // placeholder="blur" // Optional blur-up while loading
                     />
@@ -74,13 +82,26 @@ export default function Home() {
                     <Image
                       src="/Images/NFTs/497.png"
                       alt="Picture of the author"
-                      width={1000} 
-                      height={1000} 
+                      width={1000}
+                      height={1000}
                       // blurDataURL="data:..." automatically provided
                       // placeholder="blur" // Optional blur-up while loading
                     />
                   </div>
                 </section>
+              </div>
+            </section>
+            <section
+              id="Roadmap"
+              className="h-screen border-4_ border-blue-500 place-items-center isolate overflow-hidden overflow-y-auto scrollbar-thumb-[#497174] scrollbar-thin scrollbar-thumb-rounded-full scroll-smooth p-4 hover:scrollbar-thumb-[#EB6440] active:dscrollbar-thumb-[#D6E4E5]"
+            >
+              <div className="flex flex-1 gap-2 flex-col items-center">
+                <h1 className="text-8xl font-extrabold font-[VarelaR] text-center w-min text-[#497174]">
+                  DeBalance NFT 2023
+                </h1>
+                <div className="roadmap-container flex w-full flex-col">
+                  <RoadmapTimeLine data={[1, 2, 3]} />
+                </div>
               </div>
             </section>
           </div>
@@ -92,7 +113,7 @@ export default function Home() {
                 <nav className="p-2 pb-0 pr-0 text-[#497174] border-b-2 border-[#D6E4E5] text-right font-[PBCaps] hover:text-[#EB6440] transition-all">
                   {d}
                 </nav>
-                
+
                 <span className="absolute flex group-hover:bg-[#EB6440] w-0 bottom-0 right-0 p-[1px] group-hover:w-full transition-all ease-out duration-500"></span>
               </a>
             ))}
