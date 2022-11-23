@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { RoadmapTimeLine } from "../Components/RoadMapTimeLine";
+import SideNavigation from "../Components/SideNavigation";
 import styles from "../styles/Home.module.css";
 
 export const getServerSideProps = async (ctx) => {
@@ -20,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-1 bg-[#EFF5F5]">
-        <div className="flex-1 border-4_ overflow-hidden overflow-y-auto_ h-[100vh] scroll-smooth border-green-500">
+        <div className="flex-1 border-4_ overflow-hidden h-[100vh] scroll-smooth border-green-500">
           <div className="sections-container flex flex-1 flex-col border-4_ border-orange-500 gap-4">
             <section
               id="Home"
@@ -30,14 +31,14 @@ export default function Home() {
             </section>
             <section
               id="Story"
-              className="h-screen border-4_ border-blue-500 grid place-items-center isolate"
+              className="h-screen border-4_ overflow-hidden overflow-y-auto border-blue-500 grid place-items-center isolate"
             >
-              <div className="home-content-container max-w-[1500px] flex">
-                <section className="basis-1/2 grow pl-4">
+              <div className="home-content-container lg:max-w-[90%] flex flex-wrap_ border-4_ relative">
+                <section className="md:basis-3/4 lg:basis-1/2 lg:grow pl-4 mix-blend-exclusion font-extrabold md:font-normal bg-gradient-to-r from-[#EB6440] to-[#497174] bg-clip-text text-transparent bg-opacity-50_">
                   <h1 className="text-6xl text-[#EB6440] font-[PBCaps]">
                     DeBalance NFT
                   </h1>
-                  <p className="text-lg text-[#497174] font-[VarelaR]">
+                  <p className="text-lg md:text-[#497174] font-[VarelaR]">
                     DeBalance NFT adalah koleksi NFT serial yang berjalan diatas
                     jaringan blockchain Algorand. Proyek merupakan bagian dari
                     mega proyek MANDALIKA SERIES, sebuah proyek yang di inisiasi
@@ -46,7 +47,7 @@ export default function Home() {
                     Lombok.
                   </p>
                   <br />
-                  <p>
+                  <p className="text-lg md:text-[#497174] font-[VarelaR] ">
                     Dalam proyek ini kami merilis 7500 karakter yang dirilis
                     sesuai volume berseri yang diwakili oleh karakter yang
                     berbeda beda. Setiap karakter diwakili oleh corak, warna,
@@ -57,7 +58,7 @@ export default function Home() {
                     terbatas (limited edition).
                   </p>
                 </section>
-                <section className="relative basis-1/3 z-[-1]">
+                <section className="md:relative absolute top-auto right-0 w-1/3 h-full bottom-auto md:block grow lg:grow-0 md:basis-1/3 z-[-1] basis-full">
                   <div className="nft-img-container overflow-hidden w-96 rounded-full absolute -top-60 -left-20">
                     <Image
                       src="/Images/NFTs/93.png"
@@ -96,29 +97,18 @@ export default function Home() {
               className="h-screen border-4_ border-blue-500 place-items-center isolate overflow-hidden overflow-y-auto scrollbar-thumb-[#497174] scrollbar-thin scrollbar-thumb-rounded-full scroll-smooth p-4 hover:scrollbar-thumb-[#EB6440] active:dscrollbar-thumb-[#D6E4E5]"
             >
               <div className="flex flex-1 gap-2 flex-col items-center">
-                <h1 className="text-8xl font-extrabold font-[VarelaR] text-center w-min text-[#497174]">
+                <h1 className="sm:text-8xl text-6xl font-extrabold font-[VarelaR] text-center w-min text-[#497174]">
                   DeBalance NFT 2023
                 </h1>
                 <div className="roadmap-container flex w-full flex-col">
-                  <RoadmapTimeLine data={[1, 2, 3]} />
+                  <RoadmapTimeLine data={[1, 2, 3, 5]} />
                 </div>
               </div>
             </section>
           </div>
         </div>
-        <aside className="border-4_ flex justify-center items-center p-4">
-          <div className="nav-container flex flex-col gap-2">
-            {navMenu.map((d, i) => (
-              <a href={`#${d}`} key={i} className="relative group">
-                <nav className="p-2 pb-0 pr-0 text-[#497174] border-b-2 border-[#D6E4E5] text-right font-[PBCaps] hover:text-[#EB6440] transition-all">
-                  {d}
-                </nav>
-
-                <span className="absolute flex group-hover:bg-[#EB6440] w-0 bottom-0 right-0 p-[1px] group-hover:w-full transition-all ease-out duration-500"></span>
-              </a>
-            ))}
-          </div>
-        </aside>
+        {/* side nav */}
+        <SideNavigation navMenu={navMenu} />
       </main>
       {/* <footer className="">just a footer</footer> */}
     </div>
