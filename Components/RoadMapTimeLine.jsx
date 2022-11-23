@@ -10,7 +10,7 @@ export const RoadmapTimeLine = ({ data }) => {
         ${!isEven && "lg:border-r-4"} `}
       >
         <div className="roadmap-heading border-b-4 border-[#EB6440] relative px-20">
-          <h2 className="text-2xl">Juli - September Q3</h2>
+          <h2 className="text-2xl">Juli - September Q{d}</h2>
           <span
             className={`roadmap-bullet-shape flex w-[30px] h-[30px]  absolute bg-[#EB6440] rounded-full -bottom-4 ${
               isEven ? "md:-left-4" : "md:-right-4 lg:left-auto"

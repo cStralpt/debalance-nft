@@ -101,7 +101,7 @@ export default function Home() {
                   DeBalance NFT 2023
                 </h1>
                 <div className="roadmap-container flex w-full flex-col">
-                  <RoadmapTimeLine data={[1, 2, 3, 5]} />
+                  <RoadmapTimeLine data={[1, 2, 3, 4]} />
                 </div>
               </div>
             </section>

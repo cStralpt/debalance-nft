@@ -21,7 +21,7 @@ const SideNavigation = ({ navMenu }) => {
         } transition-all duration-200 ease-linear`}
       >
         <span
-          className="burger-btn text-[#497174] text-2xl cursor-pointer hover:text-[#EB6440] transition duration-75 ml-auto ease-in peer ..."
+          className="burger-btn text-[#497174] text-2xl cursor-pointer hover:text-[#EB6440] transition duration-75 ml-auto ease-in peer bg-[#EFF5F5] p-2 rounded-full"
           onClick={() => {
             setHamburgerNav(!isHamburgerNav);
           }}
