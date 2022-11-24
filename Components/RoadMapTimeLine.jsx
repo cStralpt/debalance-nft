@@ -1,7 +1,7 @@
 export const RoadmapTimeLine = ({ data }) => {
   let isEven = false;
   return data.map((d, key) => (
-    <div className="roadmap-time-line-container grid lg:grid-cols-2" key={key}>
+    <div className="roadmap-time-line-container lg:grid lg:grid-cols-2 md:flex" key={key}>
       <section
         className={`basis-1/2 w-full h-full py-4 flex flex-col ${
           isEven ? "lg:order-2 lg:items-start" : "lg:order-1 lg:items-end"
