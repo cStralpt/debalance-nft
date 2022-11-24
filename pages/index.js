@@ -12,7 +12,76 @@ export const getServerSideProps = async (ctx) => {
 };
 export default function Home() {
   const navMenu = ["Home", "Story", "NFT", "Roadmap", "About us"];
-
+  const roadMapYearOne = [
+    {
+      q: 1,
+      timeLine: "Januari - Maret",
+      progress: ["10% pcs BETA sale offering and soft launching"],
+    },
+    {
+      q: 2,
+      timeLine: "April - Juni",
+      progress: ["20% 1st drop of hundred leaked"],
+    },
+    {
+      q: 3,
+      timeLine: "Juli - September",
+      progress: ["30% 2nd round of drop deal"],
+    },
+    {
+      q: 4,
+      timeLine: "Oktober - Desember",
+      progress: ["40% launch 1st class student"],
+    },
+  ];
+  const roadMapYearTwo = [
+    {
+      q: 1,
+      timeLine: "Januari - Maret",
+      progress: ["50% release Grandia event"],
+    },
+    {
+      q: 2,
+      timeLine: "April - Juni",
+      progress: ["60% Community loyalty gathering"],
+    },
+    {
+      q: 3,
+      timeLine: "Juli - September",
+      progress: ["70% virtual event and graduation of 1st class member"],
+    },
+    {
+      q: 4,
+      timeLine: "Oktober - Desember",
+      progress: ["80% shifting into metaverse project"],
+    },
+  ];
+  const roadMapYearThree = [
+    {
+      q: 1,
+      timeLine: "Januari - Maret",
+      progress: ["90% launch virtual gallery"],
+    },
+    {
+      q: 2,
+      timeLine: "April - Juni",
+      progress: ["100% national gathering in Lombok for owner"],
+    },
+  ];
+  const roadMapDatas = [
+    {
+      year: 2023,
+      roadMapTimeLineDatas: roadMapYearOne,
+    },
+    {
+      year: 2024,
+      roadMapTimeLineDatas: roadMapYearTwo,
+    },
+    {
+      year: 2025,
+      roadMapTimeLineDatas: roadMapYearThree,
+    },
+  ];
   return (
     <div className="flex h-screen flex-col border-4_ border-red-300 ">
       <Head>
@@ -96,14 +165,19 @@ export default function Home() {
               id="Roadmap"
               className="h-screen border-4_ border-blue-500 place-items-center isolate overflow-hidden overflow-y-auto scrollbar-thumb-[#497174] scrollbar-thin scrollbar-thumb-rounded-full scroll-smooth p-4 hover:scrollbar-thumb-[#EB6440] active:dscrollbar-thumb-[#D6E4E5]"
             >
-              <div className="flex flex-1 gap-2 flex-col items-center">
-                <h1 className="sm:text-8xl text-6xl font-extrabold font-[VarelaR] text-center w-min text-[#497174]">
-                  DeBalance NFT 2023
-                </h1>
-                <div className="roadmap-container flex w-full flex-col">
-                  <RoadmapTimeLine data={[1, 2, 3, 4]} />
+              {roadMapDatas.map((d, key) => (
+                <div
+                  className="flex flex-1 gap-2 flex-col items-center"
+                  key={key}
+                >
+                  <h1 className="sm:text-8xl text-6xl font-extrabold font-[VarelaR] text-center w-min text-[#497174]">
+                    DeBalance NFT {d.year}
+                  </h1>
+                  <div className="roadmap-container flex w-full flex-col">
+                    <RoadmapTimeLine data={d.roadMapTimeLineDatas} />
+                  </div>
                 </div>
-              </div>
+              ))}
             </section>
           </div>
         </div>

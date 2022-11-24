@@ -3,7 +3,7 @@ import { FaHamburger } from "react-icons/fa";
 const SideNavigation = ({ navMenu }) => {
   const [isHamburgerNav, setHamburgerNav] = useState(false);
   return (
-    <aside className="border-4_ flex justify-center items-center lg:p-4 relative">
+    <aside className="border-4_ flex justify-center items-center lg:p-4 relative border-4">
       <div className="nav-container lg:flex flex-col gap-2 hidden">
         {navMenu.map((d, i) => (
           <a href={`#${d}`} key={i} className="relative group">

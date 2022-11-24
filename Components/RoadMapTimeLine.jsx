@@ -10,7 +10,12 @@ export const RoadmapTimeLine = ({ data }) => {
         ${!isEven && "lg:border-r-4"} `}
       >
         <div className="roadmap-heading border-b-4 border-[#EB6440] relative px-20">
-          <h2 className="text-2xl">Juli - September Q{d}</h2>
+          <h2 className="text-2xl flex items-center font-[VarelaR] text-[#497174]">
+            <span className=" text-[#EB6440] font-[PBCaps] p-4 text-6xl">
+              Q{d.q}
+            </span>
+            {d.timeLine}
+          </h2>
           <span
             className={`roadmap-bullet-shape flex w-[30px] h-[30px]  absolute bg-[#EB6440] rounded-full -bottom-4 ${
               isEven ? "md:-left-4" : "md:-right-4 lg:left-auto"
@@ -19,15 +24,19 @@ export const RoadmapTimeLine = ({ data }) => {
         </div>
         <div className="roadmap-contents border-4 border-[#EB6440] p-4  m-4 rounded-3xl mt-12 w-fit">
           <ul className="list-decimal flex gap-1 flex-col font-[VarelaR] list-inside">
-            {data.map((d, key) => (
+            {d.progress.map((d, key) => (
               <div
                 className={`flex bg-[#D6E4E5] p-1 w-fit m${
                   isEven ? "r" : "l"
                 }-auto items-center rounded-full p${isEven ? "r" : "l"}-6 `}
                 key={key}
               >
-                <span className={`${isEven ? "lg:order-2 lg:pr-4" : "lg:order-1 lg:pl-4 lg:pr-0"} order-2 pr-4`}>
-                  10% pcs BETA sale offering and soft launching
+                <span
+                  className={`${
+                    isEven ? "lg:order-2 lg:pr-4" : "lg:order-1 lg:pl-4 lg:pr-0"
+                  } order-2 pr-4`}
+                >
+                  {d}
                 </span>
                 <li
                   className={`bg-[#D6E4E5] p-1 w-fit m-auto ${
